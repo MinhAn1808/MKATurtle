@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MKA Turtle</title>
+    <link rel="stylesheet" href="substyle.css">
+</head>
+
+<body>
+
+
+    <div id="main">
+        <img src="img/COMX.png" style="width: 30%;">
+        <div id="information" style="width: 30%;">
+            <center>
+                <h1>THÔNG TIN ĐƠN HÀNG</h1>
+            </center>
+
+            <h1>Họ và tên: <input id="name" value></h1>
+            <h1>SDT: <input id="sdt" value></h1>
+            <h1>Địa chỉ: <input id="address" value></h1>
+            <h2>Số lượng sản phẩm: <input id="number" value></h2>
+            <h2>Lựa chọn:
+                <button onclick="priceKD()">COMX Baby Thường</button>
+                <button onclick="priceBD()">COMX Mai Sáng</button>
+                <button onclick="priceSN()">COMX 4cm</button>
+                
+            </h2>
+
+            <h2>Tổng: <div id="result"></div>
+            </h2>
+            <button class="sumbitButton" onclick="sumbit()">Gửi đơn </button>
+            <div id="report"></div>
+            <div id="thank"></div>
+        </div>
+
+    </div>
+    <div id="footer">
+        <a onclick="reportBuy()">Made by AnDev</a>
+        <div id="donHangReport"></div>
+    </div>
+    <script>
+        //Khai bao
+        var buyProduct = ""
+        var donHangList = []
+        let donHang = {
+            name: "",
+            sdt: "",
+            address: "",
+            sanpham: ""
+        }
+        function DonHang(name, sdt, address, sanpham) {
+            this.name = name;
+            this.sdt = sdt;
+            this.address = address;
+            this.sanpham = sanpham;
+        }
+
+        var lastPrice = 0
+        const checkCount = function (count) {
+            var flag = true
+            if (count == 0 || count == null) {
+                flag = false
+            }
+            return flag
+        }
+        //button 1
+        const priceKD = function () {
+
+            var count = parseInt(document.getElementById("number").value)
+
+            if (checkCount(count) == true) {
+                var total = (170 * count)
+                lastPrice = total
+                document.getElementById("result").innerHTML = total + "k"
+                buyProduct = "COMX BABY THUONG " + count
+            } else {
+                document.getElementById("result").innerHTML = "Vui lòng nhập số lượng"
+            }
+
+        }
+        //button 2
+        const priceBD = function () {
+            var count = parseInt(document.getElementById("number").value)
+
+            if (checkCount(count) == true) {
+                var total = (230 * count)
+                lastPrice = total
+                document.getElementById("result").innerHTML = total + "k"
+                buyProduct = "COMX BABY MAI SANG " + count
+            } else {
+                document.getElementById("result").innerHTML = "Vui lòng nhập số lượng"
+            }
+        }
+        //button 3
+        const priceSN = function () {
+            var count = parseInt(document.getElementById("number").value)
+            if (checkCount(count) == true) {
+                var total = (210 * count)
+                lastPrice = total
+                document.getElementById("result").innerHTML = total + "k"
+                buyProduct = "COMX 4cm " + count
+            } else {
+                document.getElementById("result").innerHTML = "Vui lòng nhập số lượng"
+            }
+        }
+        //button 4
+        const priceCAM = function () {
+            var count = parseInt(document.getElementById("number").value)
+            if (checkCount(count) == true) {
+                var total = (40 * count)
+                lastPrice = total
+                document.getElementById("result").innerHTML = total + "k"
+                buyProduct = "Cam KAMA " + count
+            } else {
+                document.getElementById("result").innerHTML = "Vui lòng nhập số lượng"
+            }
+        }
+        //Don hang
+        const sumbit = function () {
+            var userName = document.getElementById("name").value
+            var userSdt = document.getElementById("sdt").value
+            var userAddress = document.getElementById("address").value
+
+            if (lastPrice != 0) {
+                document.getElementById("report").innerHTML = "Đơn hàng của " + userName + " " + userSdt + " " + userAddress + " " + buyProduct + " Tổng là " + lastPrice + " đã được xác nhận!"
+                let newDonHang = new DonHang(userName, userSdt, userAddress, buyProduct)
+                donHangList.push(newDonHang)
+                setTimeout(thank, 2000)
+            }
+
+        }
+        const thank = function () {
+            document.getElementById("thank").innerHTML = "Xin cảm ơn bạn đã ủng hộ !"
+        }
+        const title = function () {
+            if (lastPrice == 0) {
+                document.getElementById("result").innerHTML = "Vui lòng nhập số lượng"
+            }
+        }()
+        //reportBuy
+        const reportBuy = function () {
+            var legit = false
+            var name = window.prompt("Enter your name: ")
+            if(name=="Minh@n1808"){
+                legit = true
+            }
+            if(legit==true){
+                for (let index = 0; index < donHangList.length; index++) {
+                document.getElementById("donHangReport").innerHTML = donHangList[index].name + " |"+ donHangList[index].sdt +" |"+ donHangList[index].address +" |"+ donHangList[index].sanpham
+            }
+            }
+            
+        }
+    </script>
+</body>
+
+</html>

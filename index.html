@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MKA Turtle</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" type="img/png" href="img/1.png">
+</head>
+
+<body>
+    <div id="header">
+        <img src="img/1.png" style="position: relative; left: 10px;">
+        <h1>MKA Turtle 🐢</h1>
+        <div class="menu">
+            <h2><a href="https://www.facebook.com/mkaturtle" class="linkPage" target="_blank">Trang chủ</a></h2>
+            <h2 onclick="uudai()">Ưu đãi</h2>
+            <h2 onclick="account()">Tài khoản</h2>
+            <input id="user-name" style="height: 17px; border-radius: 5px 5px 5px 5px;" value>
+            <input id="user-password" type="password" style="height: 17px;border-radius: 5px 5px 5px 5px;" value>
+            <button onclick="login()" class="loginButton" style="height: 25px;border-radius: 5px 5px 5px 5px;">Đăng
+                nhập</button>
+            <button onclick="register()" class="registerButton"
+                style="height: 25px;border-radius: 5px 5px 5px 5px;">Đăng ký</button>
+            <div id="login"></div>
+            <div id="login1"></div>
+        </div>
+    </div>
+    <div style="width: 100%; height: 100px;">
+
+    </div>
+    <div id="main">
+        <div class="img">
+            <a href="phukien.html" target="iframe1" onclick="userclick()"><img src="img/PHỤ KIỆN.png"
+                    class="img-sell"></a>
+            <a href="comx.html" target="iframe1" onclick="userclick()"><img src="img/COMX.png" class="img-sell"></a>
+            <a href="ao.html" target="iframe1" onclick="userclick()"><img src="img/AO.png" class="img-sell"></a>
+            <a href="babafloridar.html" target="iframe1" onclick="userclick()"><img src="img/BABA FLORIDA.png"
+                    class="img-sell"></a>
+            <a href="bunghong.html" target="iframe1" onclick="userclick()"><img src="img/BỤNG HỒNG.png"
+                    class="img-sell"></a>
+            <a href="bungvang.html" target="iframe1" onclick="userclick()"><img src="img/BỤNG VÀNG.png"
+                    class="img-sell"></a>
+            <a href="cong.html" target="iframe1" onclick="userclick()"><img src="img/CÔNG.png" class="img-sell"></a>
+            <a href="map.html" target="iframe1" onclick="userclick()"><img src="img/MAP.png" class="img-sell"></a>
+            <a href="ninja.html" target="iframe1" onclick="userclick()"><img src="img/NINJA.png" class="img-sell"></a>
+            <a href="soc.html" target="iframe1" onclick="userclick()"><img src="img/SỌC.png" class="img-sell"></a>
+            <a href="taido.html" target="iframe1" onclick="userclick()"><img src="img/TAI ĐỎ 11cm.png"
+                    class="img-sell"></a>
+            <a href="vetay.html" target="iframe1" onclick="userclick()"><img src="img/VẼ TÂY.png" class="img-sell"></a>
+        </div>
+        <iframe name="iframe1" style="width: 100%; height: 500px; border: 0;"></iframe>
+    </div>
+    <div id="footer">
+        <a>Made by AnDev</a>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

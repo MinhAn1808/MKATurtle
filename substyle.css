@@ -1,0 +1,35 @@
+#main{
+    position: relative;
+    display: flex;
+    border: 1px solid black;
+}
+#information{
+    position: absolute;
+    left: 40%;
+    text-align: left;
+    background-color: antiquewhite;
+}
+input{
+    border: 1px solid black;
+    width: 90%;
+    height: 30px;
+    border-radius: 10px 10px 10px 10px;
+}
+body{
+    background-image: url("img/1.png");
+    background-repeat: no-repeat;
+    background-size: cover  ;
+    
+}
+h1,h2{
+    position: relative;
+    left: 20px;
+}
+.sumbitButton{
+    position: relative;
+    left: 20px;
+    bottom: 10px;
+}
+button{
+    border-radius: 10px 10px 10px 10px;
+}
